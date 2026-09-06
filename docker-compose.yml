@@ -1,0 +1,18 @@
+services:
+  linear-regression:
+    build:
+      context: .
+      dockerfile: src/MLFoundations.LinearRegression/Dockerfile
+    container_name: mlfoundations-linear-regression
+
+  logistic-regression:
+    build:
+      context: .
+      dockerfile: src/MLFoundations.LogisticRegression/Dockerfile
+    container_name: mlfoundations-logistic-regression
+
+  neural-network:
+    build:
+      context: .
+      dockerfile: src/MLFoundations.NeuralNetwork/Dockerfile
+    container_name: mlfoundations-neural-network

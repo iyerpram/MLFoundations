@@ -67,6 +67,37 @@ dotnet run --project src/MLFoundations.NeuralNetwork
 Each prints its training progress, evaluation metrics, and a few sample
 predictions to the console.
 
+## Running with Docker
+Each project has its own Dockerfile (multi-stage: SDK to build, runtime-only
+to run — keeps the final image smaller). Build context is the solution root
+for all three, since each Dockerfile copies the `.csproj` files for all
+projects before restoring, so NuGet's dependency graph resolves correctly
+even though only one project is actually published per image.
+
+Run all three with one command:
+```bash
+docker compose up --build
+```
+Each container runs its console app once and exits (these aren't long-running
+services) — output appears in the terminal per project, prefixed with the
+service name.
+
+Or build/run a single one directly:
+```bash
+docker build -f src/MLFoundations.NeuralNetwork/Dockerfile -t mlfoundations-nn .
+docker run --rm mlfoundations-nn
+```
+(Swap the Dockerfile path and image tag for `LinearRegression` or
+`LogisticRegression` to run those instead.)
+
+**Note:** these are one-shot console apps, not web services — there's no
+port to expose or browse to. Docker support here is mainly to demonstrate
+containerization itself (multi-stage builds, per-project images from a
+shared solution) rather than to make these specific apps more useful to
+run. If you want a Docker example that's more naturally suited to
+"running as a service," the API/Web layers in the IncidentsAi project are
+a better fit for that story.
+
 ## Running the tests
 ```bash
 dotnet test
