@@ -6,10 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLFoundations.LinearRegress
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLFoundations.LogisticRegression", "src\MLFoundations.LogisticRegression\MLFoundations.LogisticRegression.csproj", "{A2222222-2222-2222-2222-222222222222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLFoundations.NeuralNetwork", "src\MLFoundations.NeuralNetwork\MLFoundations.NeuralNetwork.csproj", "{A3333333-3333-3333-3333-333333333333}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLFoundations.Tests", "tests\MLFoundations.Tests\MLFoundations.Tests.csproj", "{A4444444-4444-4444-4444-444444444444}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
