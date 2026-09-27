@@ -65,11 +65,6 @@ docker run --rm mlfoundations-lr
 
 (Swap the Dockerfile path and image tag for `LogisticRegression` to run that instead.)
 
-> **Note:** These are one-shot console apps, not web services — there's no
-> port to expose or browse to. Docker support here is mainly to demonstrate
-> containerization itself (multi-stage builds, per-project images from a
-> shared solution).
-
 ## A note on the synthetic data
 
 All datasets here are **synthetically generated** from a known formula (see the
